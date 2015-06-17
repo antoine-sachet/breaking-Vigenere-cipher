@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_dmEJYEDGEeO8bIKpoVbFMg" name="vigenere">
+    <eAnnotations xmi:id="_du-NwEDGEeO8bIKpoVbFMg" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_du-NwUDGEeO8bIKpoVbFMg" source="codegen">
+        <details xmi:id="_du-NwkDGEeO8bIKpoVbFMg" key="codegenDirectory" value="/vigenere/src"/>
+        <details xmi:id="_dvRIsEDGEeO8bIKpoVbFMg" key="observedFolders" value="/vigenere/src"/>
+        <details xmi:id="_Jgfa4EDJEeO8bIKpoVbFMg" key="AssociatedSourceCode" value="/vigenere/src/ChiffreVigenere.java;684546486/1;/vigenere/src/ChiffreCesar.java;2252475343/1;/vigenere/src/Dechiffreur.java;1765583306/1;/vigenere/src/Programme.java;3613261071/1;/vigenere/src/Chiffre.java;1496475908/1;"/>
+      </contents>
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_l-atoEGFEeOSiMoPmtTPmg" source="preferences">
+        <contents xmi:type="ecore:EAnnotation" xmi:id="_l-atoUGFEeOSiMoPmtTPmg" source="com.yattasolutions.codegen.reverse">
+          <details xmi:id="_l-atokGFEeOSiMoPmtTPmg" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerNewFiles" value="true"/>
+          <details xmi:id="_l-ato0GFEeOSiMoPmtTPmg" key="com.yattasolutions.codegen.reverse.roundtrip.ReverseEngineerChangedFiles" value="true"/>
+          <details xmi:id="_l-atpEGFEeOSiMoPmtTPmg" key="com.yattasolutions.codegen.reverse.roundtrip.RemoveDeletedFiles" value="true"/>
+        </contents>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_wiTJ4EDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_wiTw8EDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_wiTw8UDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_wiTw8kDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_wiUYAEDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_wiUYAUDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_wiU_EEDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_wiU_EUDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_wk4j0EDGEeO8bIKpoVbFMg">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_nxeNcEDGEeO8bIKpoVbFMg" clientDependency="_xvqtIEGQEeOSiMoPmtTPmg" name="ChiffreVigenere">
+      <ownedComment xmi:id="_0GoPIESeEeOarKi3OpcRhg">
+        <body>Permet le chiffrement d'un texte par le chiffre de César&#xD;
+à partir d'une clé de type String.&#xD;
+&#xD;
+ *</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_yXctoEDGEeO8bIKpoVbFMg" name="cle" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_VdRn4EDHEeO8bIKpoVbFMg" name="chiffreCesar" visibility="private" type="_CnAsgEDHEeO8bIKpoVbFMg" isOrdered="true">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VdSO8EDHEeO8bIKpoVbFMg" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VdSO8UDHEeO8bIKpoVbFMg" value="*"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_xvqtIEGQEeOSiMoPmtTPmg" client="_nxeNcEDGEeO8bIKpoVbFMg" supplier="_nP0qIEGQEeOSiMoPmtTPmg" contract="_nP0qIEGQEeOSiMoPmtTPmg"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NSDWAUGPEeOSiMoPmtTPmg" name="chiffrer" specification="_5BXn8EDGEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_NSDWAkGPEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_NSDWA0GPEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String texteChiffre = &quot;&quot;;&#xD;
+   int lgCle = chiffreCesar.size();&#xD;
+	   for (int i=0; i&lt;texte.length(); i++){&#xD;
+ 	  char c = texte.charAt(i);&#xD;
+ 	  char cChiffre = chiffreCesar.get(i%lgCle).chiffrer(c);&#xD;
+ 	  texteChiffre += cChiffre;&#xD;
+   }&#xD;
+	   return texteChiffre;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_NSDWBEGPEeOSiMoPmtTPmg" name="ChiffreVigenere" specification="_uNPPoEDJEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_NSDWBUGPEeOSiMoPmtTPmg" type="_nxeNcEDGEeO8bIKpoVbFMg" direction="return">
+          <name xsi:nil="true"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_NSDWBkGPEeOSiMoPmtTPmg" name="cle">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>this.cle = cle;&#xD;
+	   this.chiffreCesar = new ArrayList&lt;ChiffreCesar>();&#xD;
+	   for (char c : this.cle.toCharArray()){&#xD;
+ 	  chiffreCesar.add(new ChiffreCesar(c));&#xD;
+   }&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_RG6SQEGQEeOSiMoPmtTPmg" name="dechiffrer" specification="__KgwcEDGEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_RG6SQUGQEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_RG6SQkGQEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String texteDechiffre = &quot;&quot;;&#xD;
+	      int lgCle = chiffreCesar.size();&#xD;
+	      for (int i=0; i&lt;texte.length(); i++){&#xD;
+	    	  char c = texte.charAt(i);&#xD;
+	    	  char cDechiffre = chiffreCesar.get(i%lgCle).dechiffrer(c);&#xD;
+	    	  texteDechiffre += cDechiffre;&#xD;
+	      }&#xD;
+		  return texteDechiffre;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_5BXn8EDGEeO8bIKpoVbFMg" name="chiffrer" method="_NSDWAUGPEeOSiMoPmtTPmg">
+        <ownedComment xmi:id="_7vmkYEG5EeOSiMoPmtTPmg">
+          <body>Chiffre le texte selon la méthode de Vigenère avec la clé retenue.&#xD;
+    * ON SUPPOSE LE TEXTE NE CONTENANT QUE DES LETTRES (cf Programme.assainir())&#xD;
+    * @param texte&#xD;
+    * @return texte chiffré</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_5BXn8UDGEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5BY2EEDGEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="__KgwcEDGEeO8bIKpoVbFMg" name="dechiffrer" method="_RG6SQEGQEeOSiMoPmtTPmg">
+        <ownedComment xmi:id="_0GoPIUSeEeOarKi3OpcRhg">
+          <body>Déchiffre le texte avec la clé retenue&#xD;
+    *</body>
+        </ownedComment>
+        <ownedParameter xmi:id="__KgwcUDGEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="__KhXgEDGEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_uNPPoEDJEeO8bIKpoVbFMg" name="ChiffreVigenere" method="_NSDWBEGPEeOSiMoPmtTPmg">
+        <eAnnotations xmi:id="_x1mdcEDJEeO8bIKpoVbFMg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_x1nEgEDJEeO8bIKpoVbFMg" key="create"/>
+        </eAnnotations>
+        <ownedComment xmi:id="_0Go2MESeEeOarKi3OpcRhg">
+          <body>Crée un nouveau chiffreVigenère initialisé avec la clé donnée&#xD;
+    * @param cle</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_uNPPoUDJEeO8bIKpoVbFMg" type="_nxeNcEDGEeO8bIKpoVbFMg" direction="return"/>
+        <ownedParameter xmi:id="_uNP2sEDJEeO8bIKpoVbFMg" name="cle">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_CnAsgEDHEeO8bIKpoVbFMg" clientDependency="_yodWUEGQEeOSiMoPmtTPmg" name="ChiffreCesar">
+      <ownedComment xmi:id="_k-l-sEDdEeO8bIKpoVbFMg">
+        <body>Permet le chiffrement d'un texte par le chiffre de César&#xD;
+à partir d'une clé de type char.&#xD;
+&#xD;
+@author Yoann, Sachou&#xD;
+ *</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="_nnfqsEDJEeO8bIKpoVbFMg" name="cle" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_gUwNIEDaEeO8bIKpoVbFMg" name="alphabet" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_gUw0MEDaEeO8bIKpoVbFMg" value="&quot;abcdefghijklmnopqrstuvwxyz&quot;"/>
+      </ownedAttribute>
+      <interfaceRealization xmi:id="_yodWUEGQEeOSiMoPmtTPmg" client="_CnAsgEDHEeO8bIKpoVbFMg" supplier="_nP0qIEGQEeOSiMoPmtTPmg" contract="_nP0qIEGQEeOSiMoPmtTPmg"/>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ASXhoEDNEeO8bIKpoVbFMg" name="chiffrer" specification="_Nv2CIEDHEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_ASXhoUDNEeO8bIKpoVbFMg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ASXhokDNEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String texteChiffre = &quot;&quot; ;&#xD;
+	   for (int i=0 ; i&lt;texte.length(); i++) {&#xD;
+		   texteChiffre += chiffrer(texte.charAt(i));&#xD;
+	   }&#xD;
+	   return texteChiffre;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_ASYvwEDNEeO8bIKpoVbFMg" name="ChiffreCesar" specification="_2p-LYEDJEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_kP3hIEGFEeOSiMoPmtTPmg" type="_CnAsgEDHEeO8bIKpoVbFMg" direction="return">
+          <name xsi:nil="true"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_kP3hIUGFEeOSiMoPmtTPmg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>this.cle = alphabet.indexOf(c);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_gU2TwEDaEeO8bIKpoVbFMg" name="getLettre" specification="_gUlOAEDaEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_gU2TwUDaEeO8bIKpoVbFMg" name="index">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_gU2TwkDaEeO8bIKpoVbFMg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return alphabet.charAt(index);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k-hGMEDdEeO8bIKpoVbFMg" name="getIndex" specification="_k-VgAEDdEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_k-hGMUDdEeO8bIKpoVbFMg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_k-hGMkDdEeO8bIKpoVbFMg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return alphabet.indexOf(c);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_k-i7YEDdEeO8bIKpoVbFMg" name="dechiffrer" specification="_QepxwEDHEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_k-i7YUDdEeO8bIKpoVbFMg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_k-i7YkDdEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return new ChiffreCesar(getLettre((alphabet.length() - cle)%alphabet.length())).chiffrer(texte);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_KpAQI0GPEeOSiMoPmtTPmg" name="chiffrer" specification="_KpAQIEGPEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_KpAQJEGPEeOSiMoPmtTPmg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_KpAQJUGPEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>int indexChiffre = (getIndex(c) + this.cle) % alphabet.length();&#xD;
+		   return getLettre(indexChiffre);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_QGglMEGQEeOSiMoPmtTPmg" name="dechiffrer" specification="_QGW0MEGQEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_QGglMUGQEeOSiMoPmtTPmg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_QGglMkGQEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>int indexDechiffre = (getIndex(c)  + alphabet.length() - this.cle) % alphabet.length();&#xD;
+	   return getLettre(indexDechiffre);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_Nv2CIEDHEeO8bIKpoVbFMg" name="chiffrer" method="_ASXhoEDNEeO8bIKpoVbFMg">
+        <ownedComment xmi:id="_k-nM0EDdEeO8bIKpoVbFMg">
+          <body>Chiffre 'texte' avec la clé retenue&#xD;
+    * @param texte : texte à chiffrer&#xD;
+    * @return texte chiffré</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_Nv2CIUDHEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_Nv2CIkDHEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_QepxwEDHEeO8bIKpoVbFMg" name="dechiffrer" method="_k-i7YEDdEeO8bIKpoVbFMg">
+        <ownedComment xmi:id="_k-nM0UDdEeO8bIKpoVbFMg">
+          <body>Dechiffre un texte chiffré avec la clé retenue&#xD;
+    * @param texte chiffré&#xD;
+    * @return texte dechiffré</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_QepxwUDHEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_QeuDMEDHEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_2p-LYEDJEeO8bIKpoVbFMg" name="ChiffreCesar" method="_ASYvwEDNEeO8bIKpoVbFMg">
+        <eAnnotations xmi:id="_3rw_kEDJEeO8bIKpoVbFMg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+          <details xmi:id="_3rw_kUDJEeO8bIKpoVbFMg" key="create"/>
+        </eAnnotations>
+        <ownedParameter xmi:id="_2p-LYUDJEeO8bIKpoVbFMg" type="_CnAsgEDHEeO8bIKpoVbFMg" direction="return"/>
+        <ownedParameter xmi:id="_ASYvwkDNEeO8bIKpoVbFMg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_gUlOAEDaEeO8bIKpoVbFMg" name="getLettre" isStatic="true" method="_gU2TwEDaEeO8bIKpoVbFMg">
+        <ownedComment xmi:id="_gU6lMEDaEeO8bIKpoVbFMg">
+          <body>Pour passer de l'index à la lettre&#xD;
+    * @param l'index dans l'alphabet du caractère&#xD;
+    * @return  le caractère</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_gUl1EEDaEeO8bIKpoVbFMg" name="index">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_gUmcIEDaEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_k-VgAEDdEeO8bIKpoVbFMg" name="getIndex" isStatic="true" method="_k-hGMEDdEeO8bIKpoVbFMg">
+        <ownedComment xmi:id="_k-mlwEDdEeO8bIKpoVbFMg">
+          <body>Renvoie l'INDEX dans l'alphabet (entre 0 et 25) du caractère c.&#xD;
+    * @param caractère&#xD;
+    * @return l'index dans l'alphabet du caractère</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_k-WHEEDdEeO8bIKpoVbFMg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_k-WuIEDdEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_KpAQIEGPEeOSiMoPmtTPmg" name="chiffrer" method="_KpAQI0GPEeOSiMoPmtTPmg">
+        <ownedComment xmi:id="_KpAQJkGPEeOSiMoPmtTPmg">
+          <body>Renvoie le caractère en entrée chiffrer avec la clé retenue</body>
+        </ownedComment>
+        <ownedParameter xmi:id="_KpAQIUGPEeOSiMoPmtTPmg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_KpAQIkGPEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_QGW0MEGQEeOSiMoPmtTPmg" name="dechiffrer" method="_QGglMEGQEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_QGW0MUGQEeOSiMoPmtTPmg" name="c">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_QGW0MkGQEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QemHYEDHEeO8bIKpoVbFMg" name="string"/>
+    <packagedElement xmi:type="uml:DataType" xmi:id="_QeqY0EDHEeO8bIKpoVbFMg" name="string"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="__Mc0sEDHEeO8bIKpoVbFMg" name="Dechiffreur">
+      <ownedComment xmi:id="_0Go2MUSeEeOarKi3OpcRhg">
+        <body> Permet de déchiffrer un texte chiffré (par César ou Vigenère)&#xD;
+ sans en connaitre la clé.&#xD;
+ *</body>
+      </ownedComment>
+      <ownedAttribute xmi:id="__vXfEEDIEeO8bIKpoVbFMg" name="alphabet" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__vYGIEDIEeO8bIKpoVbFMg" value="*"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_5ad40UGUEeOSiMoPmtTPmg" value="&quot;abcdefghijklmnopqrstuvwxyz&quot;.toCharArray()"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_IZt0cEGXEeOSiMoPmtTPmg" name="LONGUEUR_CLE_MAX" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_IZt0cUGXEeOSiMoPmtTPmg" value="100"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_N2CpgEGzEeOSiMoPmtTPmg" name="IC_ANGLAIS" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_N2CpgUGzEeOSiMoPmtTPmg" value="1.73"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_N2D3oEGzEeOSiMoPmtTPmg" name="IC_FRANCAIS" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_N2D3oUGzEeOSiMoPmtTPmg" value="2.02"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_N2FFwEGzEeOSiMoPmtTPmg" name="IC_UNIFORME" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        <defaultValue xmi:type="uml:LiteralString" xmi:id="_N2FFwUGzEeOSiMoPmtTPmg" value="1.0"/>
+      </ownedAttribute>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5awzwEGUEeOSiMoPmtTPmg" name="trouverCle" specification="_H8cqsEDIEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_5awzwUGUEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5awzwkGUEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String cle = &quot;&quot;;&#xD;
+		&#xD;
+		int lgCle = trouverLongueurCle(texte);&#xD;
+		List&lt;String> sousTextes = parser(texte, lgCle);&#xD;
+		for (String s : sousTextes){&#xD;
+			cle += trouverCleCesar(s);&#xD;
+		}&#xD;
+	&#xD;
+		return cle;&#xD;
+		&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5awzw0GUEeOSiMoPmtTPmg" name="trouverLongueurCle" specification="_5anCwEGUEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_5awzxEGUEeOSiMoPmtTPmg" name="texteChiffre">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5awzxUGUEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>int lgCle = 1;&#xD;
+	   Boolean found = false;&#xD;
+	   while(!found &amp;&amp; lgCle&lt;LONGUEUR_CLE_MAX) {&#xD;
+		&#xD;
+		   // création des sous-textes en prenant une lettre tout les lgCle caractères&#xD;
+		   List&lt;String> sousTexte = parser(texteChiffre, lgCle);&#xD;
+		   &#xD;
+		   // calcul de la moyenne de l'indice de coincidence pour cette lg de clé&#xD;
+		   double moyIC = 0; &#xD;
+		   for (String s : sousTexte){&#xD;
+			   moyIC += getIndiceDeCoincidence(s);&#xD;
+		   }&#xD;
+		   moyIC = moyIC / lgCle;&#xD;
+		   &#xD;
+		   System.out.println(&quot;Pour la lg de clé &quot;+lgCle+ &quot;on calcule un IC moyen de : &quot; +moyIC);&#xD;
+		   if (Math.abs(moyIC-IC_UNIFORME) > 0.5)&#xD;
+			   return lgCle;&#xD;
+		   &#xD;
+		   lgCle++;&#xD;
+	   }&#xD;
+	   &#xD;
+	   throw new Exception (&quot;Impossible de trouver la longueur de la clé (recherche des clés &lt; &quot;+LONGUEUR_CLE_MAX+&quot;).&quot;);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5awzxkGUEeOSiMoPmtTPmg" name="dechiffrer" specification="_g2jX0EDIEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_5awzx0GUEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5awzyEGUEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String cle = &quot;&quot;;&#xD;
+	   try {&#xD;
+		   cle = trouverCle(texte);&#xD;
+	} catch (Exception e) {&#xD;
+		System.out.println(&quot;Impossible de déchiffrer le texte&quot;);&#xD;
+		e.printStackTrace();&#xD;
+	}&#xD;
+	   return dechiffrer(texte, cle);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_5awzyUGUEeOSiMoPmtTPmg" name="getIndiceDeCoincidence" specification="_5anCw0GUEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_5awzykGUEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5awzy0GUEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>double indiceCoincidence = 0;&#xD;
+	   int n = texte.length();&#xD;
+	   for (char c : alphabet){&#xD;
+		   double nC = 0;&#xD;
+		   for(int i=0; i&lt;n; i++) {&#xD;
+			   if (texte.charAt(i)==c)&#xD;
+				   nC++;&#xD;
+		   }&#xD;
+		   indiceCoincidence += (nC/n)*((nC-1)/(n-1));&#xD;
+	   }&#xD;
+	   indiceCoincidence *= 26;&#xD;
+	   return indiceCoincidence;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_IZ3lcUGXEeOSiMoPmtTPmg" name="parser" specification="_IZkqgEGXEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_IZ3lckGXEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_IZ3lc0GXEeOSiMoPmtTPmg" name="n">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_IZ3ldEGXEeOSiMoPmtTPmg" isOrdered="true" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IZ3ldUGXEeOSiMoPmtTPmg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>List&lt;StringBuilder> l = new ArrayList&lt;StringBuilder>();&#xD;
+	   for (int i=0; i&lt;n; i++){&#xD;
+		   l.add(new StringBuilder());&#xD;
+	   }&#xD;
+	   &#xD;
+	   int lgTexte=texte.length();&#xD;
+	   for (int i=0; i&lt;lgTexte; i++){&#xD;
+		   l.get(i%n).append(texte.charAt(i));&#xD;
+	   }&#xD;
+	   &#xD;
+	   List&lt;String> subText = new ArrayList&lt;String>();&#xD;
+	   for (int i=0; i&lt;n; i++){&#xD;
+		   subText.add(l.get(i).toString());&#xD;
+	   }&#xD;
+	   return subText;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0GMxUESeEeOarKi3OpcRhg" name="trouverCleCesar" specification="_0FV1sESeEeOarKi3OpcRhg">
+        <ownedParameter xmi:id="_gRCn8ESiEeOarKi3OpcRhg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_gRCn8USiEeOarKi3OpcRhg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>double apparitionMax = 0;&#xD;
+	   char lettreLaPlusFrequente = 'a';&#xD;
+	   int n = texte.length();&#xD;
+	   for (char c : alphabet){&#xD;
+		   double apparition = 0;&#xD;
+		   for(int i=0; i&lt;n; i++) {&#xD;
+			   if (texte.charAt(i)==c)&#xD;
+				   apparition++;&#xD;
+		   }&#xD;
+		   if (apparition > apparitionMax){&#xD;
+			   apparitionMax = apparition;&#xD;
+			   lettreLaPlusFrequente = c;&#xD;
+		   }&#xD;
+	   }&#xD;
+	   &#xD;
+	   // on part du principe que la lettre la plus fréquente code le 'e'&#xD;
+	   int decalage = ChiffreCesar.getIndex(lettreLaPlusFrequente)-ChiffreCesar.getIndex('e'); //décalage entre -4 et 21&#xD;
+	   decalage = (decalage + alphabet.length ) % (alphabet.length); //ramène le décalage entre 0 et 25&#xD;
+	   char cle = ChiffreCesar.getLettre(decalage);&#xD;
+	   &#xD;
+	   return cle;&#xD;
+</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_FyCkIESjEeOarKi3OpcRhg" name="dechiffrer" specification="_X-ubgEDIEeO8bIKpoVbFMg">
+        <ownedParameter xmi:id="_FyCkIUSjEeOarKi3OpcRhg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FyCkIkSjEeOarKi3OpcRhg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_FyCkI0SjEeOarKi3OpcRhg" name="cle">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>return new ChiffreVigenere(cle).dechiffrer(texte);&#xD;
+</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_H8cqsEDIEeO8bIKpoVbFMg" name="trouverCle" method="_5awzwEGUEeOSiMoPmtTPmg" raisedException="_N2ANQUGzEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_H8cqsUDIEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_H8dRwEDIEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_X-ubgEDIEeO8bIKpoVbFMg" name="dechiffrer" visibility="private" method="_FyCkIESjEeOarKi3OpcRhg">
+        <ownedParameter xmi:id="_X-ubgUDIEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_X-vCkEDIEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_X-vCkUDIEeO8bIKpoVbFMg" name="cle">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_g2jX0EDIEeO8bIKpoVbFMg" name="dechiffrer" method="_5awzxkGUEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_g2jX0UDIEeO8bIKpoVbFMg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_g2j-4EDIEeO8bIKpoVbFMg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_5anCwEGUEeOSiMoPmtTPmg" name="trouverLongueurCle" method="_5awzw0GUEeOSiMoPmtTPmg" raisedException="_N2ANQUGzEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_5anCwUGUEeOSiMoPmtTPmg" name="texteChiffre">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5anCwkGUEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_5anCw0GUEeOSiMoPmtTPmg" name="getIndiceDeCoincidence" method="_5awzyUGUEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_5anCxEGUEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_5anCxUGUEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_IZkqgEGXEeOSiMoPmtTPmg" name="parser" visibility="private" method="_IZ3lcUGXEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_IZkqgUGXEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_IZkqgkGXEeOSiMoPmtTPmg" name="n">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_IZkqg0GXEeOSiMoPmtTPmg" isOrdered="true" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IZkqhEGXEeOSiMoPmtTPmg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0FV1sESeEeOarKi3OpcRhg" name="trouverCleCesar" method="_0GMxUESeEeOarKi3OpcRhg">
+        <ownedParameter xmi:id="_ZYLSsESiEeOarKi3OpcRhg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_0GMxUUSeEeOarKi3OpcRhg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_a9uVcEGHEeOSiMoPmtTPmg" name="Programme">
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_xAWfI0GHEeOSiMoPmtTPmg" name="main" specification="_a9uVcUGHEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_xAWfJEGHEeOSiMoPmtTPmg" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_xAWfJUGHEeOSiMoPmtTPmg" value="*"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>System.out.println(&quot;Exemple d'attaque du chiffre de Vigenère : &quot;);&#xD;
+		&#xD;
+		/* Choix de la clé et du texte en clair */&#xD;
+		String cle = &quot;caribou&quot;;&#xD;
+		String texteClair = &quot;&quot;;&#xD;
+		try {&#xD;
+			texteClair = readFile(&quot;Vernes.txt&quot;);&#xD;
+		} catch (IOException e) {&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+				&#xD;
+		System.out.println(&quot;Clé choisie : &quot; + cle);&#xD;
+		System.out.println(&quot;Texte choisi (150 premiers caractères) : \n&quot; + texteClair.substring(0, 150) );&#xD;
+		ChiffreVigenere vig = new ChiffreVigenere(cle);&#xD;
+		&#xD;
+		&#xD;
+		System.out.println(&quot;Chiffrement :&quot;);&#xD;
+		String texteAssaini = assainir(texteClair);&#xD;
+		System.out.println(&quot;Texte assaini : &quot; + texteAssaini.substring(0, 150) );&#xD;
+		&#xD;
+		String texteChiffre = vig.chiffrer(texteAssaini);&#xD;
+		System.out.println(&quot;Texte chiffré : &quot; + texteChiffre.substring(0, 150) );&#xD;
+		&#xD;
+		System.out.println(&quot;Dechiffrement : &quot;);&#xD;
+		&#xD;
+		&#xD;
+		Dechiffreur d = new Dechiffreur();&#xD;
+		try {&#xD;
+			System.out.println(&quot;Longueur de la clé : &quot;+ d.trouverLongueurCle(texteChiffre));&#xD;
+			System.out.println(&quot;Clé : &quot; + d.trouverCle(texteChiffre));&#xD;
+		} catch (Exception e) {&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+		&#xD;
+		String texteDechiffre = d.dechiffrer(texteChiffre);&#xD;
+		System.out.println(&quot;Texte dechiffré : &quot; + texteDechiffre.substring(0, 150));&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_-fCm8EGJEeOSiMoPmtTPmg" name="assainir" specification="_-eTAEEGJEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_-fCm8UGJEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_-fCm8kGJEeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String texteAssaini = Normalizer.normalize(texte, Normalizer.Form.NFD);&#xD;
+		// ne garde que les caractères de a à z et de A à Z&#xD;
+		String texteAssaini2 = texteAssaini.replaceAll(&quot;[^a-zA-Z]&quot;, &quot;&quot;);&#xD;
+		// convertit le texte en minuscule&#xD;
+		String texteAssaini3 = texteAssaini2.toLowerCase();&#xD;
+		return texteAssaini3;&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_IkDq8kGREeOSiMoPmtTPmg" name="test" specification="_IjwwAEGREeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_kHJzkEGREeOSiMoPmtTPmg" name="chiffre" type="_nP0qIEGQEeOSiMoPmtTPmg"/>
+        <ownedParameter xmi:id="_kHJzkUGREeOSiMoPmtTPmg" name="texteClair">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>String texteAssaini = assainir(texteClair);&#xD;
+		String texteChiffre = chiffre.chiffrer(texteAssaini);&#xD;
+		String texteDechiffre = chiffre.dechiffrer(texteChiffre);&#xD;
+		&#xD;
+		System.out.println(&quot;Test du chiffre \n&quot;);&#xD;
+		System.out.println(&quot;texte d'origine : &quot; + texteClair);&#xD;
+		System.out.println(&quot;texte 'assaini' : &quot; + texteAssaini);&#xD;
+		System.out.println(&quot;texte chiffré : &quot; + texteChiffre);&#xD;
+		System.out.println(&quot;texte déchiffré : &quot; + texteDechiffre);&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Erp2MEG2EeOSiMoPmtTPmg" name="readFile" specification="_Erca0EG2EeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_Erp2MUG2EeOSiMoPmtTPmg" name="pathname">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_Erp2MkG2EeOSiMoPmtTPmg" direction="return">
+          <name xsi:nil="true"/>
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <language>java</language>
+        <body>File file = new File(pathname);&#xD;
+	    StringBuilder fileContents = new StringBuilder((int)file.length());&#xD;
+	    Scanner scanner = new Scanner(file);&#xD;
+	    String lineSeparator = System.getProperty(&quot;line.separator&quot;);&#xD;
+&#xD;
+	    try {&#xD;
+	        while(scanner.hasNextLine()) {        &#xD;
+	            fileContents.append(scanner.nextLine() + lineSeparator);&#xD;
+	        }&#xD;
+	        return fileContents.toString();&#xD;
+	    } finally {&#xD;
+	        scanner.close();&#xD;
+	    }&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_0GPNkESeEeOarKi3OpcRhg" name="testV" specification="_0EjykESeEeOarKi3OpcRhg">
+        <language>java</language>
+        <body>Chiffre vigenere = new ChiffreVigenere(&quot;ceco&quot;); //47 caractères&#xD;
+		String s1 = &quot;&quot;;&#xD;
+		try {&#xD;
+			s1 = readFile(&quot;les_misérables_1_chapter.txt&quot;);&#xD;
+		} catch (IOException e) {&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+		//System.out.println(s1);&#xD;
+		String s2 = assainir(s1);&#xD;
+		System.out.println(s2);&#xD;
+		String s3 = vigenere.chiffrer(s2);&#xD;
+		System.out.println(s3);&#xD;
+		&#xD;
+		Dechiffreur d = new Dechiffreur();&#xD;
+		&#xD;
+		System.out.println(d.getIndiceDeCoincidence(s1));&#xD;
+		&#xD;
+		try {&#xD;
+			System.out.println(d.trouverLongueurCle(s3));&#xD;
+		} catch (Exception e) {&#xD;
+			e.printStackTrace();&#xD;
+		}&#xD;
+		&#xD;
+		System.out.println(vigenere.dechiffrer(s3));&#xD;
+		&#xD;
+	</body>
+      </ownedBehavior>
+      <ownedOperation xmi:id="_a9uVcUGHEeOSiMoPmtTPmg" name="main" isStatic="true" method="_xAWfI0GHEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_a9uVckGHEeOSiMoPmtTPmg" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_a93fYUGHEeOSiMoPmtTPmg" value="*"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_-eTAEEGJEeOSiMoPmtTPmg" name="assainir" isStatic="true" method="_-fCm8EGJEeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_-eTAEUGJEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_-eTAEkGJEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_IjwwAEGREeOSiMoPmtTPmg" name="test" method="_IkDq8kGREeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_IkDq8UGREeOSiMoPmtTPmg" name="chiffre" type="_nP0qIEGQEeOSiMoPmtTPmg"/>
+        <ownedParameter xmi:id="_IjwwAUGREeOSiMoPmtTPmg" name="texteClair">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_Erca0EG2EeOSiMoPmtTPmg" name="readFile" visibility="private" isStatic="true" method="_Erp2MEG2EeOSiMoPmtTPmg" raisedException="_Erk9sUG2EeOSiMoPmtTPmg">
+        <ownedParameter xmi:id="_Erca0UG2EeOSiMoPmtTPmg" name="pathname">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_ErdB4EG2EeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0EjykESeEeOarKi3OpcRhg" name="testV" method="_0GPNkESeEeOarKi3OpcRhg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_-diyIEGJEeOSiMoPmtTPmg" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_-diyIUGJEeOSiMoPmtTPmg" name="text">
+        <packagedElement xmi:type="uml:Class" xmi:id="_-evE8EGJEeOSiMoPmtTPmg" name="Normalizer"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_NRJ-IEGPEeOSiMoPmtTPmg" name="util">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_NR5lAEGPEeOSiMoPmtTPmg" name="List"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_NR5lAkGPEeOSiMoPmtTPmg" name="ArrayList"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Ermy4EG2EeOSiMoPmtTPmg" name="Scanner"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_N2ANQEGzEeOSiMoPmtTPmg" name="lang">
+        <packagedElement xmi:type="uml:Class" xmi:id="_N2ANQUGzEeOSiMoPmtTPmg" name="Exception"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_ErYwcEG2EeOSiMoPmtTPmg" name="io">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ErjIgEG2EeOSiMoPmtTPmg" name="File"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Erk9sUG2EeOSiMoPmtTPmg" name="IOException"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_nP0qIEGQEeOSiMoPmtTPmg" name="Chiffre">
+      <ownedOperation xmi:id="_qvLF4EGQEeOSiMoPmtTPmg" name="chiffrer">
+        <ownedParameter xmi:id="_qvLF4UGQEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_qvLF4kGQEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:id="_sbDY4EGQEeOSiMoPmtTPmg" name="dechiffrer">
+        <ownedParameter xmi:id="_sbDY4UGQEeOSiMoPmtTPmg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_sbDY4kGQEeOSiMoPmtTPmg" name="texte">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <profileApplication xmi:id="_dvAqAEDGEeO8bIKpoVbFMg">
+      <eAnnotations xmi:id="_dvDGQEDGEeO8bIKpoVbFMg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_dvNeUEDGEeO8bIKpoVbFMg" base_Package="_dmEJYEDGEeO8bIKpoVbFMg">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:UnresolvedElement xmi:id="_QeojoEDHEeO8bIKpoVbFMg" base_Element="_QemHYEDHEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:UnresolvedElement xmi:id="_QetcIEDHEeO8bIKpoVbFMg" base_Element="_QeqY0EDHEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gUegUEDaEeO8bIKpoVbFMg" base_Element="_nnfqsEDJEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_gUxbQEDaEeO8bIKpoVbFMg" base_Element="_gUwNIEDaEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_-eTAE0GJEeOSiMoPmtTPmg" base_Element="_-eTAEEGJEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_-e418EGJEeOSiMoPmtTPmg" base_Element="_-evE8EGJEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_NR5lAUGPEeOSiMoPmtTPmg" base_Element="_NR5lAEGPEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_NSDWAEGPEeOSiMoPmtTPmg" base_Element="_NR5lAkGPEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Array xmi:id="_5ad40EGUEeOSiMoPmtTPmg" dimensions="0" base_Element="__vXfEEDIEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_5ad40kGUEeOSiMoPmtTPmg" base_Element="__vXfEEDIEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_IZ3lcEGXEeOSiMoPmtTPmg" base_Element="_IZt0cEGXEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_N2BbYEGzEeOSiMoPmtTPmg" base_Element="_N2ANQUGzEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_N2DQkEGzEeOSiMoPmtTPmg" base_Element="_N2CpgEGzEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_N2EesEGzEeOSiMoPmtTPmg" base_Element="_N2D3oEGzEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_N2Fs0EGzEeOSiMoPmtTPmg" base_Element="_N2FFwEGzEeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_Erk9sEG2EeOSiMoPmtTPmg" base_Element="_ErjIgEG2EeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_ErmL0EG2EeOSiMoPmtTPmg" base_Element="_Erk9sUG2EeOSiMoPmtTPmg"/>
+  <UMLLabProfile:Reference xmi:id="_EroBAEG2EeOSiMoPmtTPmg" base_Element="_Ermy4EG2EeOSiMoPmtTPmg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_7vkvMEG5EeOSiMoPmtTPmg" base_Element="_VdRn4EDHEeO8bIKpoVbFMg"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_0E4isESeEeOarKi3OpcRhg" base_Element="_yXctoEDGEeO8bIKpoVbFMg"/>
+</xmi:XMI>
